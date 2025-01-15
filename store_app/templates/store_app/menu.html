@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Каталог товаров</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link mx-2 active" aria-current="page" href="/">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2" href="/categories/">Список категорий</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2" href="/products/">Список продуктов</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Еще:
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/category_create/">Создать категорию</a></li>
+                        <li><a class="dropdown-item" href="/product_create/">Создать продукт</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

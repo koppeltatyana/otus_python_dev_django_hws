@@ -1,0 +1,26 @@
+{% extends 'store_app/base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<h1>Категория "{{ category.name }}"</h1>
+
+<p><b>Описание категории:</b> {{ category.description }}</p>
+<p><b>Список товаров категории:</b></p>
+<ul>
+    {% for product in category_products %}
+    <li>
+        <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+    </li>
+
+    {% empty %}
+    <li class="list-group-item">В категории нет товаров</li>
+    {% endfor %}
+</ul>
+
+<div style="margin-bottom: 20px; text-align: right;">
+    <a class="btn btn-light" href="{% url 'category_list' %}">К списку категорий</a>
+    <a href="{% url 'category_edit' category.id %}" class="btn btn-primary" role="button">Редактировать</a>
+    <a href="{% url 'category_delete' category.id %}" class="btn btn-danger" role="button">Удалить</a>
+</div>
+{% endblock %}

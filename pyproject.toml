@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "otus-python-dev-django-hws"
+version = "0.1.0"
+description = ""
+authors = ["Татьяна Коппель <tatyana.koppel@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.1.4"
+faker = "^33.1.0"
+black = "^24.10.0"
+pytest = "^8.3.4"
+pytest-django = "^4.9.0"
+pytest-mock = "^3.14.0"
+bs4 = "^0.0.2"
+redis = "^5.2.1"
+celery = {extras = ["radis"], version = "^5.4.0"}
+django-celery-results = "^2.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

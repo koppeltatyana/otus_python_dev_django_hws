@@ -1,0 +1,30 @@
+{% extends 'store_app/base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<h1>Вы точно хотите удалить категорию {{ category.name }}?</h1>
+
+<p>Также будут удалены товары:</p>
+<ul>
+    {% for product in category_products %}
+    <li>
+        <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+    </li>
+
+    {% empty %}
+    <li class="list-group-item">В категории нет товаров</li>
+    {% endfor %}
+</ul>
+<form method="post" class="mt-4">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div style="margin-bottom: 20px; text-align: right;">
+        <a href="{% url 'category_list' %}" class="btn btn-secondary">Отмена</a>
+        <button type="submit" class="btn btn-danger">Удалить</button>
+    </div>
+
+</form>
+
+{% endblock %}

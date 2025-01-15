@@ -1,0 +1,19 @@
+{% extends 'store_app/base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<h1>Редактирование категории</h1>
+
+<form method="post" class="mt-4">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div style="margin-bottom: 20px; text-align: right;">
+        <a href="{% url 'category_detail' category.id %}" class="btn btn-secondary">Отмена</a>
+        <button type="submit" class="btn btn-success">Сохранить</button>
+    </div>
+
+</form>
+
+{% endblock %}

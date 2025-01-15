@@ -1,0 +1,17 @@
+{% extends 'store_app/base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<h1>Добавление категории</h1>
+<div style="min-height: 80vh; display: flex; flex-direction: column;">
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div style="margin-bottom: 20px; text-align: right;">
+            <a class="btn btn-light" href="{% url 'category_list' %}">Отмена</a>
+            <button type="submit" class="btn btn-success">Сохранить</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
