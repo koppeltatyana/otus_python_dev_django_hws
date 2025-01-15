@@ -30,8 +30,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-interaction --no-root
+        poetry install --no-interaction --no-root
         pip install pylint
     - name: Analysing the code with pylint
       run: |
