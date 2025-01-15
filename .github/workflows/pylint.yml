@@ -31,5 +31,6 @@ jobs:
         pylint $(git ls-files '*.py')
     - name: Run tests
       run: |
+        source .venv/bin/activate
         pytest
         coverage report
