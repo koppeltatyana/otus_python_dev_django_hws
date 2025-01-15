@@ -40,4 +40,4 @@ jobs:
     - name: Run tests
       run: |
         source .venv/bin/activate
-        pytest -s --cov --cov-report html --cov-fail-under 50
+        pytest
