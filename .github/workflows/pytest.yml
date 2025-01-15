@@ -27,6 +27,8 @@ jobs:
       run: |
         poetry install --no-interaction --no-root
         pip install pylint
+        pip install pytest
+        pip install pytest-cov
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
