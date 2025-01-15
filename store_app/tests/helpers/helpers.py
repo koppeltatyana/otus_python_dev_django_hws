@@ -9,6 +9,7 @@ from store_app.models import Category, Product
 
 
 class CommonHelpers:
+    """Класс для хранения общих доп методов"""
 
     @staticmethod
     def should_be_status_code(
@@ -100,6 +101,7 @@ class CommonHelpers:
 
 
 class ProductHelpers:
+    """Класс для хранения доп методов для продукта"""
 
     @staticmethod
     def get_product_list() -> list[Product]:
@@ -128,6 +130,7 @@ class ProductHelpers:
 
 
 class CategoryHelpers:
+    """Класс для хранения доп методов для категории"""
 
     @staticmethod
     def get_category_list() -> list[Category]:

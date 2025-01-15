@@ -4,6 +4,8 @@ from celery import shared_task
 
 
 class ActionName(StrEnum):
+    """Класс для хранения наименований действий"""
+
     created = "Created"
     updated = "Updated"
     deleted = "Deleted"

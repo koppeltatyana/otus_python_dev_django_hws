@@ -19,12 +19,12 @@ jobs:
       with:
         virtualenvs-create: true
         virtualenvs-in-project: true
-        virtualenvs-path: .venv
-        installer-parallel: true
+#        virtualenvs-path: .venv
+#        installer-parallel: true
     - name: Install dependencies
       run: |
-        poetry install
         python -m pip install --upgrade pip
+        poetry install
         pip install pylint
     - name: Analysing the code with pylint
       run: |

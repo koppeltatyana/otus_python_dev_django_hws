@@ -107,7 +107,7 @@ class CategoryDetailView(CategoryView, DetailView):
 
     def get_context_data(self, **kwargs):
         """Переопределить объект контекста"""
-        context = super(CategoryDetailView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context["category_products"] = Product.objects.filter(
             category=self.object
         ).order_by("id")
@@ -158,7 +158,7 @@ class CategoryDeleteView(CategoryView, DeleteView):
 
     def get_context_data(self, **kwargs):
         """Переопределить объект контекста"""
-        context = super(CategoryDeleteView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context["category_products"] = Product.objects.filter(
             category=self.object
         ).order_by("id")

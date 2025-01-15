@@ -1,0 +1,17 @@
+[MASTER]
+disable=
+    C0114, #  module docstring
+    C0116, #  func docstring
+    R0901,  # too-many-ancestors
+    E1101,  # no-member
+    R0801,  # Similar lines in 2 files
+    R0903,  # too-few-public-methods
+    R0917,  # too-many-positional-arguments
+    R0913,  # too-many-arguments
+    C0301,  # line-too-long
+    W0621,  # redefined-outer-name
+    C0103,  # invalid-name
+    C0415,  # import-outside-toplevel
+    C0115,  # missing-class-docstring
+    W0613,  # unused-argument
+    E0307,  # invalid-str-returned

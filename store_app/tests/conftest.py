@@ -1,12 +1,12 @@
 import pytest
 from faker import Faker
 
-from ..models import Category, Product
 from store_app.tests.helpers.helpers import (
     CategoryHelpers,
     ProductHelpers,
     CommonHelpers,
 )
+from ..models import Category, Product
 
 
 @pytest.fixture(scope="session")
@@ -79,7 +79,7 @@ def get_random_product_body(fake, create_category) -> dict:
 
 
 @pytest.fixture
-def create_product(fake: Faker, get_random_product_body: dict) -> Product:
+def create_product(get_random_product_body: dict) -> Product:
     """Создание продукта"""
     return Product.objects.create(**get_random_product_body)
 

@@ -7,7 +7,7 @@ from store_app.tests.helpers.helpers import CommonHelpers
 class TestProductModels:
     """Тесты на модели продукта"""
 
-    def test_product_creation(self, fake, get_random_product_body, product_helpers):
+    def test_product_creation(self, get_random_product_body, product_helpers):
         products_count = product_helpers.get_products_count()
         Product.objects.create(**get_random_product_body)
         new_products_count = product_helpers.get_products_count()
@@ -24,7 +24,7 @@ class TestProductModels:
         for product in products:
             product_helpers.should_be_product_in_list(product)
 
-    def test_product_update(self, create_product, fake, product_helpers):
+    def test_product_update(self, create_product, product_helpers):
         products_count = product_helpers.get_products_count()
         new_product_data = {
             "name": "updated_" + create_product.name,
