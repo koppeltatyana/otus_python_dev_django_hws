@@ -8,6 +8,8 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.11"]
+        node-version: [ 18.x, 20.x ]
+        redis-version: [ 6, 7 ]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -25,6 +27,14 @@ jobs:
       run: |
         poetry install --no-interaction --no-root
         pip install pylint
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Start Redis
+      uses: supercharge/redis-github-action@1.7.0
+      with:
+        redis-version: ${{ matrix.redis-version }}
     - name: Run tests
       run: |
         source .venv/bin/activate
