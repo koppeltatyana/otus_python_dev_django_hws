@@ -1,10 +1,9 @@
 [tool.poetry]
-name = "otus-python-dev-django-hws"
+name = "otus_python_dev_django_hws"
 version = "0.1.0"
 description = ""
 authors = ["Татьяна Коппель <tatyana.koppel@mail.ru>"]
 readme = "README.md"
-package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
